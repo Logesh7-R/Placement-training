@@ -9,15 +9,19 @@ public class Main {
         for(int i=0;i<n;i++){
             a[i]=scanner.nextInt();
         }
-       int b=0;
-       for(int i=0;i<n;i++){
-           if(n/2==i){
-               System.out.print(b+" ");
-               b=0;
+       for(int i=0;i<n/2;i++){
+           for(int j=0;j<n-1;j++){
+               a[j]+=a[j+1];
+           a[j+1]=a[j]-a[j+1];
+           a[j]=a[j]-a[j+1];
            }
-           b+=a[i];
        }
-       System.out.print(b);
+        for(int i=0;i<n;i++){
+            System.out.print(a[i]+" ");
+        }
+       
         }
     }
+
+
 
